@@ -1,0 +1,115 @@
+# AI开发岗位核心技能清单（结合2025-2026招聘需求）
+当前行业AI岗位主要分为**AI应用开发工程师**（占招聘量70%+，侧重业务落地）和**大模型/算法工程师**（侧重模型训练与优化），以下是完整技能体系与对应学习资料，按「通用基础→核心技术→工程落地→细分方向」分层呈现。
+
+## 一、通用基础能力（所有AI开发岗必备）
+### 1. 编程基础
+- **核心技能**：精通Python语法、面向对象与异步编程；熟练使用NumPy/Pandas/Matplotlib进行数据处理与可视化；可选掌握C++/TypeScript（全栈/高性能场景加分）
+- **招聘对应**：100%岗位明确要求精通Python及数据科学工具链
+- **学习资料**：
+  - 入门：廖雪峰Python教程、B站「Python入门到精通」
+  - 进阶：《Python编程：从入门到实践》、《利用Python进行数据分析》（Wes McKinney）
+  - 实战：Kaggle Learn 数据处理赛道、LeetCode Python简单题
+
+### 2. 数学基础
+- **核心技能**：线性代数（向量、矩阵运算、特征值、向量化思想）；概率统计（常见分布、贝叶斯定理、假设检验、评价指标）；微积分（导数、梯度、链式法则、优化原理）
+- **招聘对应**：算法岗要求扎实推导，应用岗要求理解核心概念
+- **学习资料**：
+  - 入门：3Blue1Brown《线性代数的本质》《微积分的本质》（B站可看）
+  - 系统：《概率论与数理统计》（浙大版）、《线性代数及其应用》
+  - AI定向：《深度学习的数学》、吴恩达机器学习配套数学讲义
+
+### 3. 计算机基础与工程工具
+- **核心技能**：Git版本控制与协作；Linux常用命令与环境部署；常用数据结构与算法；SQL数据库操作
+- **招聘对应**：所有岗位要求Git使用规范与工程化编码习惯
+- **学习资料**：
+  - Git：菜鸟教程Git板块、《Pro Git》
+  - Linux：《鸟哥的Linux私房菜》基础篇
+  - 算法：LeetCode HOT 100（侧重数组、链表、哈希、动态规划）
+
+## 二、AI核心技术能力
+### 1. 机器学习基础（必学）
+- **核心技能**：监督学习（线性回归、逻辑回归、决策树、随机森林、SVM、XGBoost/LightGBM）；无监督学习（K-Means聚类、PCA降维）；模型评估（交叉验证、过拟合解决、Precision/Recall/F1/AUC等指标）
+- **招聘对应**：算法岗笔试必考，应用岗要求理解原理与适用场景
+- **学习资料**：
+  - 经典课程：吴恩达《Machine Learning》（Coursera，有中译）
+  - 权威书籍：《机器学习》（周志华 西瓜书）、《 Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow》（实战首选）
+  - 实战：Scikit-learn官方教程、Kaggle入门竞赛（Titanic、房价预测）
+
+### 2. 深度学习基础（必学）
+- **核心技能**：神经网络基础（神经元、反向传播、激活函数、损失函数）；CNN（卷积、池化、经典网络）；RNN/LSTM/GRU；**Transformer架构（自注意力机制、多头注意力、Encoder-Decoder）**
+- **招聘对应**：所有AI岗要求理解Transformer底层原理，是面试核心考点
+- **学习资料**：
+  - 系统课程：李沐《动手学深度学习》（d2l.ai，中文免费，带代码实战）
+  - 权威书籍：《深度学习》（Ian Goodfellow 花书，理论深度）
+  - Transformer专项：《Attention Is All You Need》论文精读、B站「Transformer通俗讲解」
+  - 框架实战：PyTorch官方60分钟入门教程
+
+### 3. 大模型核心技术（当前招聘核心重点）
+#### （1）大模型应用开发（AI应用岗核心）
+- **核心技能**：Prompt工程（结构化提示、思维链CoT、Few-shot、角色设定）；RAG技术（文档加载、切分策略、Embedding模型、向量检索、重排序Rerank）；Agent开发（工具调用Function Calling、规划推理、记忆机制、多智能体协作）；主流框架LangChain/LangGraph/LlamaIndex
+- **招聘对应**：90%以上AI应用岗要求精通LangChain，有RAG/Agent落地项目经验
+- **学习资料**：
+  - 官方文档：LangChain官方教程（含RAG、Agent、LangGraph全案例）、LlamaIndex官方文档
+  - 系统课程：吴恩达《LangChain for LLM Application Development》（DeepLearning.AI）
+  - 实战项目：基于LangChain搭建PDF问答机器人、企业知识库RAG系统
+
+#### （2）大模型微调与训练进阶（大模型算法岗核心）
+- **核心技能**：参数高效微调（LoRA/QLoRA/Adapter，主流方案）；全参数微调；对齐技术（SFT监督微调、DPO偏好优化、RLHF）；训练框架（HuggingFace Transformers、PEFT、LLaMA-Factory）
+- **招聘对应**：大模型算法、训练岗要求掌握，有垂直领域微调项目经验
+- **学习资料**：
+  - 官方工具：HuggingFace PEFT官方文档、LLaMA-Factory官方教程（一站式微调框架）
+  - 系统课程：吴恩达《Finetuning Large Language Models》
+  - 实战：使用LLaMA-Factory对Qwen/Llama3做LoRA微调、自定义数据集训练
+
+#### （3）推理优化与部署
+- **核心技能**：模型量化（GPTQ/AWQ/INT4/INT8，显存压缩）；推理加速（vLLM、TensorRT-LLM、批处理）；显存优化技术；推理服务吞吐量调优
+- **招聘对应**：部署岗、算法岗核心能力，应用岗加分项
+- **学习资料**：
+  - 官方文档：vLLM官方文档、NVIDIA TensorRT-LLM开发指南
+  - 实战教程：使用vLLM部署开源大模型、AWQ量化推理实践
+
+## 三、工程化与落地能力（企业招聘核心区分点）
+### 1. API服务开发
+- **核心技能**：FastAPI/Flask Web框架；RESTful API设计规范；SSE流式输出（大模型对话必备）；接口鉴权、限流与异常处理
+- **招聘对应**：几乎所有AI开发岗要求掌握至少一种Web框架，能独立封装模型API
+- **学习资料**：
+  - 官方：FastAPI官方中文教程（最权威）
+  - 实战：用FastAPI封装RAG服务，实现流式对话接口
+
+### 2. 向量数据库
+- **核心技能**：主流向量库选型与使用（Milvus、ChromaDB、Pinecone、Weaviate）；PostgreSQL+pgvector轻量方案；向量索引优化、检索性能调优
+- **招聘对应**：RAG相关岗位必要求熟悉至少一种向量数据库
+- **学习资料**：
+  - 官方：Milvus官方教程、ChromaDB文档
+  - 实战：基于pgvector搭建轻量RAG检索系统
+
+### 3. 容器化与云部署
+- **核心技能**：Docker镜像构建与Dockerfile编写；Docker Compose多服务编排；可选：Kubernetes基础、CI/CD自动化流程
+- **招聘对应**：中高级岗必备，要求能独立交付生产级AI服务
+- **学习资料**：
+  - 入门：《Docker入门到实践》
+  - 实战：将FastAPI+RAG项目打包为Docker镜像，实现一键部署
+
+### 4. 生产级工程规范
+- **核心技能**：日志与链路追踪；推理成本与延迟优化；数据安全与隐私合规；编码规范与技术文档
+- **招聘对应**：企业重点考察，区分「玩具Demo」和「生产级开发」的核心标准
+- **学习资料**：Google Python风格指南、RESTful API设计最佳实践
+
+## 四、细分方向专项技能（按需选择）
+### 1. 自然语言处理（NLP）方向
+- 技能：文本分类、命名实体识别、信息抽取、摘要生成
+- 资料：CS224N课程、HuggingFace NLP教程
+
+### 2. 计算机视觉（CV）方向
+- 技能：目标检测、图像分割、生成式AI（Stable Diffusion）
+- 资料：CS231N课程、Diffusers官方文档
+
+### 3. 多模态方向
+- 技能：图文理解、多模态大模型微调、视觉问答
+- 资料：Qwen-VL、LLaVA官方开源项目
+
+### 4. MLOps与大模型基础设施方向
+- 技能：模型训练平台、监控告警、资源调度、分布式训练
+- 资料：MLflow官方教程、Kubeflow文档
+
+-RAG（检索增强生成）是一种结合了检索和生成的技术，先查找资料再回答--
