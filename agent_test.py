@@ -55,6 +55,10 @@ tool_map = {
     "calculate": calculate
 }
 
+
+# 在函数外面定义全局历史
+chat_history = []
+
 def run_agent(user_input):
     messages = [{"role": "user", "content": user_input}]
     
@@ -66,6 +70,7 @@ def run_agent(user_input):
     )
     
     msg = response.choices[0].message
+    chat_history.append(msg)
     
     # 如果模型决定调用工具
     if msg.tool_calls:
@@ -86,6 +91,12 @@ def run_agent(user_input):
             "tool_call_id": tool_call.id,
             "content": result
         })
+
+        chat_history.append({
+            "role": "tool",
+            "tool_call_id": tool_call.id,
+            "content": result
+        })
         
         final = client.chat.completions.create(
             model="deepseek-chat",
@@ -96,8 +107,6 @@ def run_agent(user_input):
         return msg.content
 
 if __name__ == "__main__":
-    print(run_agent("北京今天天气怎么样？"))
+    print(run_agent("广州天气怎么样？"))
     print("---")
-    print(run_agent("帮我算一下 23 乘以 47"))
-    print("---")
-    print(run_agent("你好，你是谁？"))
+    print(run_agent("那刚才那个城市适合穿外套吗？"))
